@@ -1,0 +1,37 @@
+{
+  "name": "dts-bundle-generator-vue",
+  "version": "0.0.1",
+  "description": "Demo project",
+  "repository": "https://github.com/f-lawe/vite-plugin-dts-bundle-generator",
+  "license": "MIT",
+  "author": "François Lavaud-Wernert <francois@lavaud.family>",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "vite build",
+    "clean": "rimraf dist",
+    "dts": "dts-bundle-generator ./src/index.ts --out-file ./dist/index.d.ts",
+    "lint": "eslint . --ext .ts --fix && sort-package-json",
+    "prepack": "npm run clean && npm run build",
+    "watch": "vite build --watch"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.5",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "dts-bundle-generator": "^7.2.0",
+    "eslint": "^8.36.0",
+    "rimraf": "^4.4.0",
+    "sort-package-json": "^2.4.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.2.1",
+    "vue": "^3.2.47",
+    "vue-tsc": "^1.2.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.47"
+  }
+}
