@@ -2,7 +2,7 @@
   "name": "dts-bundle-generator-vue",
   "version": "0.0.1",
   "description": "Demo project",
-  "repository": "https://github.com/f-lawe/vite-plugin-dts-bundle-generator",
+  "repository": "https://github.com/f-lawe/dts-bundle-generator-vue",
   "license": "MIT",
   "author": "François Lavaud-Wernert <francois@lavaud.family>",
   "main": "dist/index.cjs",
