@@ -12,12 +12,13 @@
   "scripts": {
     "build": "vite build",
     "clean": "rimraf dist",
-    "dts": "dts-bundle-generator ./src/index.ts --out-file ./dist/index.d.ts",
+    "dts": "dts-bundle-generator ./src/index.ts --out-file ./dist/index.d.ts --project ./tsconfig.json",
     "lint": "eslint . --ext .ts --fix && sort-package-json",
     "prepack": "npm run clean && npm run build",
     "watch": "vite build --watch"
   },
   "devDependencies": {
+    "@babel/types": "^7.21.3",
     "@types/node": "^18.15.5",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
