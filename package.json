@@ -15,6 +15,7 @@
     "dts": "dts-bundle-generator ./src/index.ts --out-file ./dist/index.d.ts --project ./tsconfig.json",
     "lint": "eslint . --ext .ts --fix && sort-package-json",
     "prepack": "npm run clean && npm run build",
+    "vue-tsc": "npx vue-tsc --declaration --emitDeclarationOnly --outfile dist/index",
     "watch": "vite build --watch"
   },
   "devDependencies": {
