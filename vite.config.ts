@@ -3,6 +3,7 @@ import { defineConfig, normalizePath } from 'vite';
 
 import vue from '@vitejs/plugin-vue';
 import p from './package.json' assert { type: 'json' };
+import vueTypescript from './vite.dts';
 
 const formats: Record<string, string> = {
   'es': path.basename(p.module),
@@ -11,7 +12,10 @@ const formats: Record<string, string> = {
 
 export default defineConfig({
   plugins: [
-    vue()
+    vue(),
+    vueTypescript({
+      outFile: p.types
+    })
   ],
   build: {
     sourcemap: true,

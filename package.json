@@ -12,10 +12,11 @@
   "scripts": {
     "build": "vite build",
     "clean": "rimraf dist",
-    "dts": "dts-bundle-generator ./src/index.ts --out-file ./dist/index.d.ts --project ./tsconfig.json",
+    "dts:bundle-generator": "npm run clean && dts-bundle-generator ./src/index.ts --out-file ./dist/index.d.ts --project ./tsconfig.json",
+    "dts:vue-tsc-bundle": "npm run clean && npx vue-tsc --declaration --emitDeclarationOnly --outfile dist/index",
+    "dts:vue-tsc": "npm run clean && npx vue-tsc --declaration --emitDeclarationOnly --outDir dist",
     "lint": "eslint . --ext .ts --fix && sort-package-json",
     "prepack": "npm run clean && npm run build",
-    "vue-tsc": "npx vue-tsc --declaration --emitDeclarationOnly --outfile dist/index",
     "watch": "vite build --watch"
   },
   "devDependencies": {
